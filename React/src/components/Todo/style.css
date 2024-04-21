@@ -1,0 +1,8 @@
+.item{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+button{
+    height: 2rem;
+}
