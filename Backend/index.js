@@ -7,11 +7,13 @@ app.use(express.json());
 //body{ title:String,description:String}
 app.post('/todo',async(req,res)=>{
 const createPayload=req.body
-const parsedPayload=createTodo.safeParse(createPayload);
-(!parsedPayload.success)
-{
-    res.status(411).json({message:"You send the wrong json"})
-}
+// const parsedPayload=createTodo.safeParse(createPayload);
+// console.log(parsedPayload.success)
+// (!parsedPayload.success)
+// {
+//     res.status(411).json({message:"You send the wrong json"})
+// return
+// }
 //db call
 await Todo.create({
     title:createPayload.title,
@@ -19,22 +21,21 @@ await Todo.create({
     completed:false
 })
 res.status(200).json({message:"Todo created"})
-return 
+ 
 })
 app.get('/todos',async (req,res)=>{
-const response=await Todo.find({})
-const data= await response.json()
+const data=await Todo.find({})
 res.json({todos:data})
 })
 
 app.put("/completed",async(req,res)=>{
     const updatePayload=req.body
-    const parsedPayload=updateTodo.safeParse(updatePayload)
-    if (!parsedPayload.success)
-    {
-        res.status(411).json({message:"You send the wrong json"})
-        return
-    }
+    // const parsedPayload=updateTodo.safeParse(updatePayload)
+    // if (!parsedPayload.success)
+    // {
+    //     res.status(411).json({message:"You send the wrong json"})
+    //      return
+    // }
     await Todo.update({_id:req.body.id},{
         completed:true
     })
