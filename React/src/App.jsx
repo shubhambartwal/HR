@@ -3,6 +3,8 @@ import "./App.css";
 import CreateTodo from "./components/Todo/CreateTodo";
 import Todos from "./components/Todo/Todos";
 import Toplevel from "./components/Basics/Toplevel";
+import Todo from "./components/Basics/Todo";
+import CardWrapper from "./components/CardWrapper/CardWrapper";
 
 function App() {
   // const [todos,setTodos]=useState([])
@@ -20,7 +22,11 @@ function App() {
   // todos={[]}
   />*/}
 
-  <Toplevel/>
+  {/*<Toplevel/>*/}
+  
+{/*<Todo/>*/}
+<CardWrapper/>
+
     </div>
   );
 }
