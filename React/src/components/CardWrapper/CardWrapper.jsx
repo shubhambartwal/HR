@@ -3,13 +3,15 @@ import React from "react";
 const CardWrapper = () => {
   return (
     <div style={{ border: "2px solid black", display: "flex" }}>
-      <LeftWrapper RightWrapper={< RightWrapper />} />
+      <LeftWrapper >
+     < RightWrapper/>
+      </LeftWrapper>
     </div>
   );
 };
 
-const LeftWrapper = ({ RightWrapper }) => {
-  return <div style={{ border: "2px solid red" }}>{RightWrapper}</div>;
+const LeftWrapper = ({children}) => {
+  return <div style={{ border: "2px solid red" }}>{children}</div>;
 };
 
 function RightWrapper() {
