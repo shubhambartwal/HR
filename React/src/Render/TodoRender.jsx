@@ -3,11 +3,11 @@ import React, { useEffect, useState } from "react";
 const TodoRender = () => {
   const [todos, setTodos] = useState([]);
   useEffect(() => {
-    fetch("https://sum-server.100xdevs.com/todos")
-      .then( async function  ( res){
-        const json=await res.json();
-        setTodos(json.todos)
-  })
+  setInterval(()=>fetch("https://sum-server.100xdevs.com/todos")
+  .then( async function  ( res){
+    const json=await res.json();
+    setTodos(json.todos)
+}),[3000])  
 
 // setTodos([{"id":4,"title":"Todo 4","description":"This is todo 4","completed":false}])
 }
