@@ -8,6 +8,7 @@ import CardWrapper from "./components/CardWrapper/CardWrapper";
 import TodoRender from "./Render/TodoRender";
 
 function App() {
+  const [id,setId]=useState()
   // const [todos,setTodos]=useState([])
   // fetch('http://localhost:5000/todos').then(async (response)=>
   // {const json=await response.json();
@@ -27,7 +28,13 @@ function App() {
 
       {/*<Todo/>*/}
       {/*<CardWrapper />*/}
-      <TodoRender id={1}/>
+
+
+      <button onClick={()=>setId(1)}>1</button>
+      <button  onClick={()=>setId(2)}>2</button>
+      <button  onClick={()=>setId(3)}>3</button>
+      <button  onClick={()=>setId(4)}>4</button>
+      <TodoRender onClick={()=>setId(5)} id={id}/>
     </div>
   );
 }

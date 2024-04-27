@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import axios from 'axios';
 const TodoRender = ({id}) => {
   const [todos, setTodos] = useState([]);
 //   useEffect(() => {
@@ -12,13 +12,13 @@ const TodoRender = ({id}) => {
 //   , []);
 
 useEffect(()=>{
-    fetch(`https://sum-server.100xdevs.com/todos?id=${id}`).then(async function (res){
-        const json=await res.json()
- setTodos(json.todos);       
+    axios.get(`https://sum-server.100xdevs.com/todos?id=${id}`).then(async function (res){
+        // const json=await res.json()
+ setTodos(res.data.todos);       
 })
-},[])
+},[id])
   return <div>
-    {todos.length}
+    {id}
     {todos.map(item => <Todo key={item.id} item={item} />)} 
     </div>;
 };
