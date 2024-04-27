@@ -27,7 +27,7 @@ function App() {
 
       {/*<Todo/>*/}
       {/*<CardWrapper />*/}
-      <TodoRender/>
+      <TodoRender id={1}/>
     </div>
   );
 }
