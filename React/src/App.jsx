@@ -5,7 +5,10 @@ import Todos from "./components/Todo/Todos";
 import Toplevel from "./components/Basics/Toplevel";
 import Todo from "./components/Basics/Todo";
 import CardWrapper from "./components/CardWrapper/CardWrapper";
-import TodoRender from "./Render/TodoRender";
+import TodoRender from "./components/Render/TodoRender";
+import Counter from "./components/Counter/Counter";
+import Memo from "./components/memo/Memo";
+import useTodos from "./components/CustomHooks/UseTodos";
 
 function App() {
   const [id,setId]=useState()
@@ -15,6 +18,8 @@ function App() {
   // setTodos(json.todos)
   // }
   // )
+
+  const todos= useTodos()
   return (
     <div>
       {/*<Counter/>*/}
@@ -29,13 +34,20 @@ function App() {
       {/*<Todo/>*/}
       {/*<CardWrapper />*/}
 
-
+{/*
       <button onClick={()=>setId(1)}>1</button>
       <button  onClick={()=>setId(2)}>2</button>
       <button  onClick={()=>setId(3)}>3</button>
       <button  onClick={()=>setId(4)}>4</button>
       <TodoRender onClick={()=>setId(5)} id={id}/>
-    </div>
+*/}
+
+  {/*<Counter/>*/}
+  
+  {/*<Memo/>*/}
+  {todos}
+  
+  </div>
   );
 }
 
